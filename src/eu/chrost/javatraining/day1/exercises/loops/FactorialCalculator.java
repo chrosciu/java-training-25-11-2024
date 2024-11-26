@@ -9,5 +9,20 @@ Zadanie 6: Obliczanie silni
 Silnia liczby 5 wynosi: 120
  */
 
+import java.util.Scanner;
+
 public class FactorialCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj liczbę całkowitą");
+        int n = Integer.parseInt(scanner.nextLine());
+        int silnia = 1;
+
+        for (int i =1; i <= n ; i++) {
+            silnia = silnia * i;
+
+        }
+        System.out.println("Silnia liczby " + n + " wynosi: " + silnia);
+    }
 }
