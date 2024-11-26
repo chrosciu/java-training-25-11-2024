@@ -11,4 +11,17 @@ Zadanie 5: Średnia liczb w tablicy
  */
 
 public class ArithmeticMean {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            double sum = 0;
+            for (String arg : args) {
+                double number = Double.parseDouble(arg);
+                sum += number;
+            }
+            double mean = sum / args.length;
+            System.out.println("Srednia to " + mean);
+        } else {
+            System.out.println("Brak argumentów");
+        }
+    }
 }

@@ -11,4 +11,17 @@ Zadanie 3: Tablica z liczbami parzystymi
 */
 
 public class EvenElements {
+    public static void main(String[] args) {
+        int[] intArray = new int[20];
+
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i + 1;
+        }
+
+        for (int i : intArray) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
 }
