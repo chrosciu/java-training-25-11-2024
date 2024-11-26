@@ -12,13 +12,17 @@ Największy argument to: 42
 
 public class MaxArgument {
     public static void main(String[] args) {
-        int maxElement = 0;
-        for (String arg : args) {
-            int intArg = Integer.parseInt(arg);
-            if (maxElement < intArg) {
-                maxElement = intArg;
+        if (args.length > 0) {
+            int maxElement = Integer.parseInt(args[0]);
+            for (String arg : args) {
+                int intArg = Integer.parseInt(arg);
+                if (maxElement < intArg) {
+                    maxElement = intArg;
+                }
             }
+            System.out.println("Największy argument to: " + maxElement);
+        } else {
+            System.out.println("Brak argumentow");
         }
-        System.out.println("Największy argument to: " + maxElement);
     }
 }
