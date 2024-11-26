@@ -10,4 +10,27 @@ o	area(double base, double height, boolean isTriangle) – zwraca pole trójkąt
 */
 
 public class AreaCalculator {
+    public static void main(String[] args) {
+        System.out.println(area(3.5));
+
+        System.out.println(area(7.5, 8.5));
+
+        System.out.println(area(2.5, 3.5, true));
+        System.out.println(area(2.5, 3.5, false));
+    }
+
+    public static double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    public static double area(double length, double width) {
+        return length * width;
+    }
+
+    public static double area(double base, double height, boolean isTriangle) {
+        if (!isTriangle) {
+            return 0;
+        }
+        return base * height / 2;
+    }
 }
