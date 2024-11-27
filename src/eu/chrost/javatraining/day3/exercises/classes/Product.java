@@ -1,5 +1,7 @@
 package eu.chrost.javatraining.day3.exercises.classes;
 
+import java.util.Objects;
+
 /*
 
 Zadanie 8: Klasa Product
@@ -16,9 +18,69 @@ o	boolean isSamePrice(Product other) – sprawdza, czy dwa produkty mają taką 
 o	Utwórz kilka obiektów klasy Product, ustawiając wartości pól bezpośrednio.
 o	Porównaj obiekty za pomocą equals() i ==.
 o	Oblicz łączną cenę produktów.
-
-
  */
 
 public class Product {
+    public String name;
+    public double price;
+    public int quantity;
+
+    public double calculateTotalPrice() {
+        return price * quantity;
+    }
+
+    public boolean isSamePrice(Product other) {
+        return other != null && this.price == other.price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Product product) {
+            return Objects.equals(product.name, this.name)
+                    && product.price == this.price
+                    && product.quantity == this.quantity;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
+    public static void main(String[] args) {
+        Product p1 = new Product();
+        p1.name = "Lalka";
+        p1.price = 23.67;
+        p1.quantity = 5;
+
+        Product p2 = new Product();
+        p2.name = "Miś";
+        p2.price = 15;
+        p2.quantity = 10;
+
+        Product p3 = new Product();
+        p3.name = "Kubek";
+        p3.price = 12.11;
+        p3.quantity = 5;
+
+        Product p4 = new Product();
+        p4.name = "Kubek";
+        p4.price = 12.11;
+        p4.quantity = 5;
+        System.out.println("Czy p1 równe p2: " + p1.equals(p2));
+        System.out.println("Czy p2 równe p3: " + p2.equals(p3));
+        System.out.println("Czy p3 równe p1: " + p3.equals(p1));
+        System.out.println("Czy p3 równe p4: " + p3.equals(p4));
+
+        System.out.println("p1: " + p1);
+        System.out.println("Total price for p1: " + p1.calculateTotalPrice());
+        System.out.println("p1 price equal to p2 price " + p1.isSamePrice(p2));
+        System.out.println("p3 price equal to p4 price " + p3.isSamePrice(p4));
+
+    }
+
 }
