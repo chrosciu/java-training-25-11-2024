@@ -19,4 +19,32 @@ o	Modyfikuje ich GPA, sprawdzając poprawność danych wejściowych.
  */
 
 public class Student {
+    private final String name;
+    private final int id;
+    private double gpa;
+
+    public Student(String name, int id, double gpa) {
+        this.name = name;
+        this.id = id;
+        this.gpa = isValidGPA(gpa) ? gpa : 0;
+    }
+
+    public void updateGPA(double gpa) {
+        if (isValidGPA(gpa)) {
+            this.gpa = gpa;
+        }
+    }
+
+    private boolean isValidGPA(double gpa) {
+        return (0 <= gpa) && (gpa <= 4);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", gpa=" + gpa +
+                '}';
+    }
 }
