@@ -16,5 +16,20 @@ public class Person {
     public String name;
     public int age;
 
-    public boolean isAdult()
+    public boolean isAdult() {
+        return age>18;
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.age = 25;
+        person.name = "Anna";
+
+        Person person2 = new Person();
+        person2.age = 17;
+        person2.name = "Adrian";
+
+        System.out.println("is " + person.name + " adult? " + person.isAdult());
+        System.out.println("is " + person2.name + " adult? " + person2.isAdult());
+    }
 }
