@@ -1,5 +1,6 @@
 package eu.chrost.javatraining.day3.exercises.classes;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /*
@@ -22,22 +23,22 @@ o	Oblicz łączną cenę produktów.
 
 public class Product {
     public String name;
-    public double price;
+    public BigDecimal price;
     public int quantity;
 
-    public double calculateTotalPrice() {
-        return price * quantity;
+    public BigDecimal calculateTotalPrice() {
+        return price.multiply(new BigDecimal(quantity));
     }
 
     public boolean isSamePrice(Product other) {
-        return other != null && this.price == other.price;
+        return other != null && Objects.equals(this.price, other.price);
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Product product) {
             return Objects.equals(product.name, this.name)
-                    && product.price == this.price
+                    && Objects.equals(product.price, this.price)
                     && product.quantity == this.quantity;
         }
         return false;
@@ -54,22 +55,22 @@ public class Product {
     public static void main(String[] args) {
         Product p1 = new Product();
         p1.name = "Lalka";
-        p1.price = 23.67;
+        p1.price = new BigDecimal("23.67");
         p1.quantity = 5;
 
         Product p2 = new Product();
         p2.name = "Miś";
-        p2.price = 15;
+        p2.price = new BigDecimal("15.00");
         p2.quantity = 10;
 
         Product p3 = new Product();
         p3.name = "Kubek";
-        p3.price = 12.11;
+        p3.price = new BigDecimal("12.11");
         p3.quantity = 5;
 
         Product p4 = new Product();
         p4.name = "Kubek";
-        p4.price = 12.11;
+        p4.price = new BigDecimal("12.11");
         p4.quantity = 5;
         System.out.println("Czy p1 równe p2: " + p1.equals(p2));
         System.out.println("Czy p2 równe p3: " + p2.equals(p3));
