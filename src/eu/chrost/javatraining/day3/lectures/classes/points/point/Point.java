@@ -1,5 +1,7 @@
 package eu.chrost.javatraining.day3.lectures.classes.points.point;
 
+import java.util.Objects;
+
 public class Point {
     public double x;
     public double y;
@@ -14,5 +16,21 @@ public class Point {
 
     public void setX(double x) {
         this.x = x;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Point p) {
+            return p.x == this.x && p.y == this.y;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

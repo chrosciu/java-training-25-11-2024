@@ -1,5 +1,6 @@
 package eu.chrost.javatraining.day3.lectures.classes.points.main;
 
+import eu.chrost.javatraining.day3.lectures.classes.points.circle.Circle;
 import eu.chrost.javatraining.day3.lectures.classes.points.point.Point;
 
 public class Main {
@@ -20,5 +21,28 @@ public class Main {
 
         p1.setX(7);
         System.out.println(p1.x);
+
+        Point p3 = new Point();
+        p3.x = 3;
+        p3.y = 5;
+
+        Point p4 = p2;
+
+        System.out.println("p2 == p3: " + (p2 == p3));
+        System.out.println("p2 == p4: " + (p2 == p4));
+
+        System.out.println("p2 equals p3: " + (p2.equals(p3)));
+        System.out.println("p2 equals p4: " + (p2.equals(p4)));
+        System.out.println("p1 equals p2: " + (p1.equals(p2)));
+
+        Object o = new Object();
+        System.out.println(p1.equals(o));
+
+        Circle c = new Circle();
+        c.radius = 2.5;
+        c.center = p1;
+        System.out.println(c);
+
+
     }
 }
