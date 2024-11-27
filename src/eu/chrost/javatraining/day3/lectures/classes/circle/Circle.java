@@ -1,6 +1,6 @@
-package eu.chrost.javatraining.day3.lectures.classes.points.circle;
+package eu.chrost.javatraining.day3.lectures.classes.circle;
 
-import eu.chrost.javatraining.day3.lectures.classes.points.point.Point;
+import eu.chrost.javatraining.day3.lectures.classes.point.Point;
 
 public class Circle {
     public double radius;

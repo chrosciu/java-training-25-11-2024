@@ -1,7 +1,7 @@
-package eu.chrost.javatraining.day3.lectures.classes.points.main;
+package eu.chrost.javatraining.day3.lectures.classes;
 
-import eu.chrost.javatraining.day3.lectures.classes.points.circle.Circle;
-import eu.chrost.javatraining.day3.lectures.classes.points.point.Point;
+import eu.chrost.javatraining.day3.lectures.classes.circle.Circle;
+import eu.chrost.javatraining.day3.lectures.classes.point.Point;
 
 public class Main {
     public static void main(String[] args) {

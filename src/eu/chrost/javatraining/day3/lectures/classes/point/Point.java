@@ -1,6 +1,4 @@
-package eu.chrost.javatraining.day3.lectures.classes.points.point;
-
-import java.util.Objects;
+package eu.chrost.javatraining.day3.lectures.classes.point;
 
 public class Point {
     public double x;
