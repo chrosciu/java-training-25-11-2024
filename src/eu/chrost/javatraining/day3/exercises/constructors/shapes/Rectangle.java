@@ -17,4 +17,40 @@ o	Wywołuje metody do obliczeń i wyświetla wyniki.
  */
 
 public class Rectangle {
+    private final double length;
+    private final double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length > 0 ? length : 1;
+        this.width = width > 0 ? width : 1;
+    }
+
+    public Rectangle() {
+        this.length = 1;
+        this.width = 1;
+    }
+
+    public double area() {
+        return length * width;
+    }
+
+    public double perimeter() {
+        return 2 * (length + width);
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "length=" + length +
+                ", width=" + width +
+                '}';
+    }
 }
