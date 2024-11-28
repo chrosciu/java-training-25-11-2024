@@ -1,5 +1,11 @@
 package eu.chrost.javatraining.day4.lectures.libraries;
 
+/*
+Zadanie - dodac pole:
+     double weight
+do klasy Person i zobaczyc czy serializacja / deserializacja dalej dziala
+ */
+
 public class Person {
     private final String firstName;
     private final String lastName;
