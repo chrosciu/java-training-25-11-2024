@@ -12,4 +12,9 @@ o	Dodaj metodę String getBreed(), która zwraca tekst "Unknown breed".
  */
 
 public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        System.out.println(dog.getSpecies());
+        System.out.println(dog.getBreed());
+    }
 }

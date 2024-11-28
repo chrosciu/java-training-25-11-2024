@@ -13,4 +13,19 @@ Wykorzystaj polimorfizm, aby wywołać metodę getType() na każdym obiekcie.
  */
 
 public class Main {
+    public static void main(String[] args) {
+        Vehicle[] vehicles = new Vehicle[3];
+        Vehicle v1 = new Vehicle();
+        Vehicle v2 = new Car();
+        Vehicle v3 = new Truck();
+
+        vehicles[0] = v1;
+        vehicles[1] = v2;
+        vehicles[2] = v3;
+
+
+        for (Vehicle v : vehicles) {
+            System.out.println(v.getType());
+        }
+    }
 }
