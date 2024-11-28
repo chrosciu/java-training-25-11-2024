@@ -16,4 +16,19 @@ o	Wykorzystaj super.toString() w implementacji metody.
 */
 
 public class Main {
+    public static void main(String[] args) {
+         Employee[] employees = new Employee[3];
+
+         Employee e1 = new Employee( "Piotr", 345.89);
+         Employee e2 = new Employee( "Jan", 1234.89);
+         Manager m1 = new Manager("Sales","Roman", 4567.89);
+
+         employees[0] = e1;
+         employees[1] = m1;
+         employees[2] = e2;
+
+         for (Employee e : employees) {
+             System.out.println(e);
+         }
+    }
 }
