@@ -10,11 +10,13 @@ public class Person {
     private final String firstName;
     private final String lastName;
     private final int age;
+    private final double weight;
 
-    public Person(String firstName, String lastName, int age) {
+    public Person(String firstName, String lastName, int age, double weight) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.weight = weight;
     }
 
     @Override
@@ -23,6 +25,7 @@ public class Person {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", weight=" + weight +
                 '}';
     }
 }
