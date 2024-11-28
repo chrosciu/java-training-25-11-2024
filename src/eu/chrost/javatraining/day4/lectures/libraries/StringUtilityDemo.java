@@ -25,15 +25,24 @@ public class StringUtilityDemo {
 
         if (StringUtils.isBlank(line)) {
             System.out.println("Line is blank, terminating");
+            scanner.close();
             return;
         }
 
         System.out.println("Line is correct, to be continued...");
 
-        //wczytanie znaku
+        System.out.println("Enter a single character:");
+        String characterLine = scanner.nextLine();
+        if (StringUtils.isEmpty(characterLine)) {
+            System.out.println("No character entered, terminating");
+            scanner.close();
+            return;
+        }
+        char character = characterLine.charAt(0);
 
-        //sprawdzenie ile razy znak wystapil w linii
+        int count = StringUtils.countMatches(line, character);
 
-        //wyswietlic wynik
+        System.out.println("Character " + character + " appeared " + count + " times");
+        scanner.close();
     }
 }
