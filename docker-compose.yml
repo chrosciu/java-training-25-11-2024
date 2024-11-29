@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16.4
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin                      # Nazwa użytkownika PostgreSQL
+      POSTGRES_PASSWORD: admin                  # Hasło użytkownika PostgreSQL
+      POSTGRES_DB: hr                           # Nazwa bazy danych
+    ports:
+      - "5432:5432"                             # Mapowanie portów PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Zachowanie danych po restarcie kontenera
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com     # E-mail do logowania w pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: admin            # Hasło do logowania w pgAdmin
+    ports:
+      - "8080:80"                                # Mapowanie portów pgAdmin
+    depends_on:
+      - postgres                                 # pgAdmin będzie czekać na uruchomienie PostgreSQL
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin            # Zachowanie ustawień pgAdmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:
